@@ -1,28 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import { Route, Switch } from 'wouter';
-import Detalle from '../src/components/detalle/Detalle'
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import { Route, Switch } from "wouter";
+import * as serviceWorker from "./serviceWorker";
 
 //importo las paginas
-import Home from './components/home/Home';
-
+import Listado from "../src/components/listado/Listado";
+import Detalle from "../src/components/detalle/Detalle";
 //importo las librerias
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 
 ReactDOM.render(
-    <div>
-      <Switch>
-        //Si entro a la carpeta raiz me carga el componente Home
-        <Route exact path='/' component={Home} />
-        //si entro a la ruta /detalle/:id me carga el componente Detalle pasando el id como params
-        <Route path='/detalle/:id' component={Detalle} />
-      </Switch>
-      
-    </div>,
-  document.getElementById('root')
+  <div>
+    <Switch>
+      {/*Si entro a la carpeta raiz me carga el componente Home*/}
+      <Route exact path="/" component={Listado} />
+      {/*si entro a la ruta /detalle/:id me carga el componente Detalle pasando el id como params*/}
+      <Route path="/detalle/:id" component={Detalle} />
+    </Switch>
+  </div>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
